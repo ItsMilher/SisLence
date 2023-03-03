@@ -56,24 +56,24 @@
 										$queryC = mysqli_query($conexion, "UPDATE cliente set credito = $credito where idcliente = $idCliente");
 										?>
 										<!-- Button trigger modal -->
-										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ver</button>
+										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?php echo $idCliente; ?>">Ver</button>
 
 										<!-- Modal -->
-										<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal fade" id="exampleModal<?php echo $idCliente;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
 											<div class="modal-content">
 											<div class="modal-header">
 												<h5 class="modal-title" id="exampleModalLabel">Pagar Crédito</h5>
-												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 											</div>
 											<div class="modal-body">
 												<strong> Deuda pendiente de:&nbsp; <?php echo $data['nombre']; ?>.</strong><br>
 												<strong> Monto actual:&nbsp; <?php echo $data['credito']; ?>.</strong><br>
-												<input type="number" name="pagar" id="pagar" value="">
+												<input type="number" name="pagar" id="pagar<?php echo $idCliente;?>" value="">
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-												<button type="button" class="btn btn-primary">Save changes</button>
+												<button type="button" class="btn btn-primary" onclick="pagarCredito(<?php echo $idCliente;?>, )"> Pagar crédito</button>
 											</div>
 											</div>
 										</div>

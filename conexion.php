@@ -1,8 +1,8 @@
 <?php
 
-    $host = "localhost:3307";
+    $host = "localhost:3306";
     $user = "root";
-    $clave = "12MSarifer";
+    $clave = "";
     $bd = "sislence";
 
     $conexion = mysqli_connect($host,$user,$clave,$bd);
